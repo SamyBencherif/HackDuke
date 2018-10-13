@@ -11,8 +11,12 @@ public class lescript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        float[] inputs = new float[1];
-        inputs[0] = 1;
+        double[] inputs = new double[5];
+        inputs[0] = 1.0;
+        inputs[1] = 2.0;
+        inputs[2] = 5.0;
+        inputs[3] = 2.3;
+        inputs[4] = 6.0;
         string correctcode = "return input";
         codepuzzle thepuzzle = new codepuzzle(inputs,correctcode);
         Debug.Log(thepuzzle.testsoln("return input"));
@@ -25,9 +29,9 @@ public class lescript : MonoBehaviour {
 	}
 }
 public class codepuzzle{
-        public float[] possibleinputs;
+        public double[] possibleinputs;
         public string CorrectCode;
-        public codepuzzle(float[] inputs, string correctcode)
+        public codepuzzle(double[] inputs, string correctcode)
         {
                 possibleinputs = inputs;
                 CorrectCode = correctcode;
@@ -45,7 +49,7 @@ public class codepuzzle{
                 }
                 return true;
         }
-        string runpuzzle(float input,string usersoln)
+        string runpuzzle(double input,string usersoln)
         {
                 string intro = "def main(input):\n\t";
                 string cleanedinput = usersoln.Replace("\n","\n\t");
