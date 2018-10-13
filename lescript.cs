@@ -22,10 +22,10 @@ public class lescript : MonoBehaviour {
         codepuzzle thepuzzle = new codepuzzle(inputs,correctcode);
         Debug.Log(thepuzzle.testsoln("return input"));
         Debug.Log(thepuzzle.testsoln("return 1.0"));
-        //string fibcode = "def recurse(input):\n\tif(input < 2):\n\t\treturn 1\n\telse:\n\t\treturn recurse(input-1) + recurse(input-2)";
-        //codepuzzle fibpuzzle = new codepuzzle(inputs,fibcode);
-        //Debug.Log(fibpuzzle.testsoln(fibcode));
-        //Debug.Log(fibpuzzle.testsoln(correctcode));
+        string fibcode = "def recurse(usrinput):\n\tif(usrinput < 2):\n\t\treturn 1\n\telse:\n\t\treturn recurse(usrinput-1) + recurse(usrinput-2)\nreturn recurse(input)";
+        codepuzzle fibpuzzle = new codepuzzle(inputs,fibcode);
+        Debug.Log(fibpuzzle.testsoln(fibcode));
+        Debug.Log(fibpuzzle.testsoln(correctcode));
 	}
         // Update is called once per frame
 	void Update () {
