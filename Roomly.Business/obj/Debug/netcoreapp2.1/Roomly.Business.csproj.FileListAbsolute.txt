@@ -1,0 +1,16 @@
+C:\devGit\Roomly.API\Roomly.Business\bin\Debug\netcoreapp2.1\Roomly.Business.deps.json
+C:\devGit\Roomly.API\Roomly.Business\bin\Debug\netcoreapp2.1\Roomly.Business.dll
+C:\devGit\Roomly.API\Roomly.Business\bin\Debug\netcoreapp2.1\Roomly.Business.pdb
+C:\devGit\Roomly.API\Roomly.Business\bin\Debug\netcoreapp2.1\Roomly.API.Contracts.dll
+C:\devGit\Roomly.API\Roomly.Business\bin\Debug\netcoreapp2.1\Roomly.Data.dll
+C:\devGit\Roomly.API\Roomly.Business\bin\Debug\netcoreapp2.1\Roomly.API.Contracts.pdb
+C:\devGit\Roomly.API\Roomly.Business\bin\Debug\netcoreapp2.1\Roomly.Data.pdb
+C:\devGit\Roomly.API\Roomly.Business\obj\Debug\netcoreapp2.1\Roomly.Business.csprojAssemblyReference.cache
+C:\devGit\Roomly.API\Roomly.Business\obj\Debug\netcoreapp2.1\Roomly.Business.csproj.CoreCompileInputs.cache
+C:\devGit\Roomly.API\Roomly.Business\obj\Debug\netcoreapp2.1\Roomly.Business.AssemblyInfoInputs.cache
+C:\devGit\Roomly.API\Roomly.Business\obj\Debug\netcoreapp2.1\Roomly.Business.AssemblyInfo.cs
+C:\devGit\Roomly.API\Roomly.Business\obj\Debug\netcoreapp2.1\Roomly.Business.csproj.CopyComplete
+C:\devGit\Roomly.API\Roomly.Business\obj\Debug\netcoreapp2.1\Roomly.Business.dll
+C:\devGit\Roomly.API\Roomly.Business\obj\Debug\netcoreapp2.1\Roomly.Business.pdb
+C:\devGit\Roomly.API\Roomly.Business\bin\Debug\netcoreapp2.1\Roomly.Business.runtimeconfig.json
+C:\devGit\Roomly.API\Roomly.Business\bin\Debug\netcoreapp2.1\Roomly.Business.runtimeconfig.dev.json

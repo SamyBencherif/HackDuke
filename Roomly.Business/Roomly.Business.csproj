@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Roomly.API.Contracts\Roomly.API.Contracts.csproj" />
+    <ProjectReference Include="..\Roomly.Data\Roomly.Data.csproj" />
+  </ItemGroup>
+
+</Project>
