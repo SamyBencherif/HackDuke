@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization;
@@ -15,15 +16,18 @@ public class lescript : MonoBehaviour {
         inputs[0] = 1.0;
         inputs[1] = 2.0;
         inputs[2] = 5.0;
-        inputs[3] = 2.3;
+        inputs[3] = 4.0;
         inputs[4] = 6.0;
         string correctcode = "return input";
         codepuzzle thepuzzle = new codepuzzle(inputs,correctcode);
         Debug.Log(thepuzzle.testsoln("return input"));
-        Debug.Log(thepuzzle.testsoln("return 2.3"));
+        Debug.Log(thepuzzle.testsoln("return 1.0"));
+        //string fibcode = "def recurse(input):\n\tif(input < 2):\n\t\treturn 1\n\telse:\n\t\treturn recurse(input-1) + recurse(input-2)";
+        //codepuzzle fibpuzzle = new codepuzzle(inputs,fibcode);
+        //Debug.Log(fibpuzzle.testsoln(fibcode));
+        //Debug.Log(fibpuzzle.testsoln(correctcode));
 	}
-	
-	// Update is called once per frame
+        // Update is called once per frame
 	void Update () {
 		
 	}
@@ -74,8 +78,9 @@ public class codepuzzle{
                                 stringres = res.ToString();
                         }
                 }
-                catch
+                catch (Exception e)
                 {
+                        Debug.Log(e.ToString());
                         Debug.Log("SYNTAX ERROR!");
                         return "";
                 }
