@@ -1,19 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
 using UnityEngine;
+using IronPython.Hosting;
+using Microsoft.Scripting.Hosting;
 
 public class lescript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        /*
-                Question q1 = new Question("First Question", 0, "1+1=", false, true, false , "1", "2", "3", "4", "5", "2");
-                Question q2 = new Question("second", 0, "Grayson is Awesome T/F?", false, false, true, null, null, null, null, null, "TRUE");
-                Question q3 = new Question("third", 1, "how many roads must a man walk", true, false, false, null, null, null, null, null, "42");
-                print(q3.Body);
-                */
-
+        float[] inputs = new float[1];
+        inputs[0] = 1;
+        string correctcode = "return input";
+        codepuzzle thepuzzle = new codepuzzle(inputs,correctcode);
+        Debug.Log(thepuzzle.testsoln("return input"));
+        Debug.Log(thepuzzle.testsoln("return 2.3"));
 	}
 	
 	// Update is called once per frame
@@ -21,35 +24,57 @@ public class lescript : MonoBehaviour {
 		
 	}
 }
-/*
-public class Question
-{
-        public Question(string title, int category, string body, bool shortAnswer, bool multipleChoice, bool trueFalse, string a, string b, string c, string d, string e, string ans)
+public class codepuzzle{
+        public float[] possibleinputs;
+        public string CorrectCode;
+        public codepuzzle(float[] inputs, string correctcode)
         {
-        Title = title;
-        Category = category;
-        Body = body;
-        ShortAnswer = shortAnswer;
-        MultipleChoice = multipleChoice; 
-        TrueFalse = trueFalse;
-        A = a;
-        B = b;
-        C = c;
-        D = d;
-        E = e;
-        Ans = ans;
+                possibleinputs = inputs;
+                CorrectCode = correctcode;
         }
-        public string Title {get; }
-        public int Category {get; }
-        public string Body {get; }
-        public bool ShortAnswer {get; }
-        public bool MultipleChoice {get; }
-        public bool TrueFalse {get; }
-        public string A {get; }
-        public string B {get; }
-        public string C {get; }
-        public string D {get; }
-        public string E {get; }
-        public string Ans {get; }
+        public bool testsoln(string solncode)
+        {
+                for(int i = 0; i < possibleinputs.Length; i++)
+                {
+                        string userresult = runpuzzle(possibleinputs[i],solncode);
+                        string correctresult = runpuzzle(possibleinputs[i],CorrectCode);
+                        if(!string.Equals(userresult,correctresult))
+                        {
+                                return false;
+                        }
+                }
+                return true;
+        }
+        string runpuzzle(float input,string usersoln)
+        {
+                string intro = "def main(input):\n\t";
+                string cleanedinput = usersoln.Replace("\n","\n\t");
+                string pySrc = intro + cleanedinput;
+
+                // host python and execute script
+                var engine = Python.CreateEngine ();
+                var scope = engine.CreateScope ();
+                engine.Execute (pySrc, scope);
+
+                // get function and dynamically invoke
+                string stringres;
+                try
+                {
+                        var res = scope.GetVariable ("main") (input);
+                        if(res is string)
+                        {
+                                stringres = res;
+                        }
+                        else
+                        {
+                                stringres = res.ToString();
+                        }
+                }
+                catch
+                {
+                        Debug.Log("SYNTAX ERROR!");
+                        return "";
+                }
+                return stringres;
+        }
 }
-*/
