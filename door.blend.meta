@@ -4,11 +4,23 @@ ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Door
+    100004: Knob
     400000: //RootNode
+    400002: Door
+    400004: Knob
     2100000: None__door_png
+    2100002: unnamed
+    2100004: None__knob_png
     2300000: //RootNode
+    2300002: Door
+    2300004: Knob
     3300000: //RootNode
+    3300002: Door
+    3300004: Knob
     4300000: Cube
+    4300002: Knob
+    4300004: Door
     7400000: Default Take
     9500000: //RootNode
     2186277476908879412: ImportLogs
