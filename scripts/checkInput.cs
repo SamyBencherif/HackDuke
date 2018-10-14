@@ -36,8 +36,15 @@ public class checkInput : MonoBehaviour {
             inputs[4] = 6.0;
             string correctcode = question.Answer;
             codepuzzle thepuzzle = new codepuzzle(inputs, correctcode);
-            check = thepuzzle.testsoln(arg0);
-            Debug.Log(check);
+            if(!string.Equals(arg0,""))
+            {
+                check = thepuzzle.testsoln(arg0);
+                Debug.Log(check);
+            }
+            else
+            {
+                check = false;
+            }
             if (check)
             {
                 int index = get1(vars.doors);
