@@ -8,6 +8,7 @@ using UnityEngine.Events;
 using UnityEngine;
 using IronPython.Hosting;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
 
 public class checkInput : MonoBehaviour {
@@ -26,19 +27,19 @@ public class checkInput : MonoBehaviour {
 
         private void test(string arg0)
         {
+            var question = vars.wrapper.Data.Questions.Where(x => x.QuestionId == vars.currentQuestion).FirstOrDefault(); 
             double[] inputs = new double[5];
             inputs[0] = 1.0;
             inputs[1] = 2.0;
             inputs[2] = 5.0;
             inputs[3] = 4.0;
             inputs[4] = 6.0;
-            string correctcode = "return input";
+            string correctcode = question.Body;
             codepuzzle thepuzzle = new codepuzzle(inputs, correctcode);
             check = thepuzzle.testsoln(arg0);
             Debug.Log(check);
             if (check)
             {
-                Debug.Log("Got Here");
                 int index = get1(vars.doors);
                 vars.doors[index] = 2;
             }

@@ -12,6 +12,7 @@ public class GlobalVars : MonoBehaviour
     public Vector3 currentPosition;
     public Quaternion currentRotation;
     public JsonWrapper wrapper;
+    public int currentQuestion;
     public int[] doors;
 	// Use this for initialization
 	void Start()
@@ -31,7 +32,7 @@ public class GlobalVars : MonoBehaviour
 	        question.QuestionId = k;
 	        question.Title = "This is Question " + k;
 	        question.Category = (short)(100 - k);
-	        question.Body = "We are testing the initialization of data -- here is the question squared" + k * k;
+	        question.Body = "return " + k;
 	        question.ShortAnswer = true;
 	        question.MultipleChoice = false;
 	        question.TrueFalse = false;

@@ -12,6 +12,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using Assets.HackDuke.scripts;
 using UnityEngine.SceneManagement;
+using Random = System.Random;
 
 public class popupWindow : MonoBehaviour
 {
@@ -31,8 +32,11 @@ public class popupWindow : MonoBehaviour
     {
 
         vars = GameObject.Find("GlobalVars").GetComponent<GlobalVars>();
-        
-        var danielsABitch = vars.wrapper.Data.Questions.Where(x => x.QuestionId == 1).FirstOrDefault();
+        Random r = new Random();
+        int id = r.Next(0, 7);
+        vars.currentQuestion = id;
+        Debug.Log(id);
+        var danielsABitch = vars.wrapper.Data.Questions.Where(x => x.QuestionId == id).FirstOrDefault();
         
         Cursor.lockState = CursorLockMode.None;
         //modalPanelObject.SetActive(true);
