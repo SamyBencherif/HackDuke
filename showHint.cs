@@ -11,11 +11,7 @@ public class showHint : MonoBehaviour
 
 	void OnTriggerEnter(Collider collision)
 	{
-		if (vars.showDoorHint)
-		{
 			hint.SetActive (true);
-			vars.showDoorHint = false;
-		}
 
 	    
 	}
