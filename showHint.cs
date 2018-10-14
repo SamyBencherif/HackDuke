@@ -29,6 +29,10 @@ public class showHint : MonoBehaviour
         {
             var door = transform.parent.gameObject.GetComponent<doorOpener>();
             var index = door.Index;
+            if (vars.doors[index] == 2)
+            {
+                return;
+            };
             vars.doors[index] = 1;
             vars.currentPosition = collision.transform.position;
             vars = GameObject.Find("GlobalVars").GetComponent<GlobalVars>();
