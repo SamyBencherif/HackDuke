@@ -35,10 +35,10 @@ public class multipleChoice : MonoBehaviour {
     {
 
         vars = GameObject.Find("GlobalVars").GetComponent<GlobalVars>();
-        Random r = new Random();
-        int id = r.Next(0, 7);
-        vars.currentQuestion = id;
-        Debug.Log(id);
+
+        int id;
+        id = vars.currentQuestion;
+
         var danielsABitch = vars.wrapper.Data.Questions.Where(x => x.QuestionId == id).FirstOrDefault();
 
         Cursor.lockState = CursorLockMode.None;
