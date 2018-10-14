@@ -20,24 +20,24 @@ public class GlobalVars : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 	    doors = new int[]
 	    {
-	        0, 0, 0, 0, 0, 0, 0
+	        0,0,0,0,0,0,0,0,0,0,0,0
 	    };
 	    wrapper.Path = Application.persistentDataPath + "/" + wrapper.Filename;
 	    var questions = new List<Question>();
         var questionData = new QuestionData();
-        
+
         questions = AddQuestions(questions);
-        
+
 
 	    questionData.Questions = questions;
 	    wrapper.SaveData(questionData);
         SceneManager.LoadScene("Roomly");
 	}
-	
+
 	// Update is called once per frame
 	void Update()
 	{
-		
+
 	}
 
     List<Question> AddQuestions(List<Question> questions)
