@@ -1,8 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System;
+using System.Text;
+using Microsoft.Scripting.Hosting;
 using UnityEngine.UI;
 using UnityEngine.Events;
 using UnityEngine;
+using IronPython.Hosting;
+using System.IO;
+using System.Runtime.Serialization;
 
 public class popupWindow : MonoBehaviour
 {
@@ -47,7 +53,6 @@ public class popupWindow : MonoBehaviour
 
     // submit button clicked
     public void submitResult() {
-        this.loadInput();
         this.closeWindow();
     }
 
@@ -55,4 +60,5 @@ public class popupWindow : MonoBehaviour
     public void closeWindow() {
         modalPanelObject.SetActive(false);
     }
+
 }
