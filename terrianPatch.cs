@@ -6,7 +6,7 @@ public class terrianPatch : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		GetComponent<Terrain>().
+		//GetComponent<Terrain>().
 	}
 
 	// Update is called once per frame
