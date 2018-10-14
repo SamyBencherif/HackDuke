@@ -12,9 +12,9 @@ using System.Linq;
 using System.Runtime.Serialization;
 
 public class checkInput : MonoBehaviour {
-    
+
     public InputField input;
-    public InputField.SubmitEvent se; 
+    public InputField.SubmitEvent se;
     public bool check = false;
     public GlobalVars vars;
     void Start() {
@@ -27,7 +27,7 @@ public class checkInput : MonoBehaviour {
 
         private void test(string arg0)
         {
-            var question = vars.wrapper.Data.Questions.Where(x => x.QuestionId == vars.currentQuestion).FirstOrDefault(); 
+            var question = vars.wrapper.Data.Questions.Where(x => x.QuestionId == vars.currentQuestion).FirstOrDefault();
             double[] inputs = new double[5];
             inputs[0] = 1.0;
             inputs[1] = 2.0;
@@ -43,7 +43,7 @@ public class checkInput : MonoBehaviour {
                 int index = get1(vars.doors);
                 vars.doors[index] = 2;
             }
-            
+
     }
 
     public int get1(int[] nums)
