@@ -44,7 +44,7 @@ public class GlobalVars : MonoBehaviour
     {
         var question0 = new Question();
         question0.QuestionId = 0;
-        question0.Title = "What is the nth Fibonacci number (write in terms of 'input')";
+        question0.Title = "Find the nth Fibonacci number using python(write in terms of 'input')";
         question0.Category = 0;
         question0.Body = "";
         question0.ShortAnswer = true;
@@ -75,7 +75,7 @@ public class GlobalVars : MonoBehaviour
 
         var question2 = new Question();
         question2.QuestionId = 2;
-        question2.Title = "Solve for the third side of a right triangle with hypotenuse length 20 and leg length 'input'";
+        question2.Title = "Solve for the third side of a right triangle with hypotenuse length 20 and leg length 'input' with python";
         question2.Category = 0;
         question2.Body = "";
         question2.ShortAnswer = true;
@@ -105,7 +105,7 @@ public class GlobalVars : MonoBehaviour
 
         var question4 = new Question();
         question4.QuestionId = 4;
-        question4.Title = "Find the area of a circle radius 'input'.";
+        question4.Title = "Find the area of a circle radius 'input' using python.";
         question4.Category = 0;
         question4.Body = "return ";
         question4.ShortAnswer = true;
@@ -120,7 +120,7 @@ public class GlobalVars : MonoBehaviour
 
         var question5 = new Question();
         question5.QuestionId = 5;
-        question5.Title = "Sum of integers 1 to input.";
+        question5.Title = "Calculate the sum of integers 1 to a number 'input' using python.";
         question5.Category = 0;
         question5.Body = "return ";
         question5.ShortAnswer = true;
@@ -135,7 +135,7 @@ public class GlobalVars : MonoBehaviour
 
         var question6 = new Question();
         question6.QuestionId = 6;
-        question6.Title = "Square input.";
+        question6.Title = "Use python to square number input.";
         question6.Category = 0;
         question6.Body = "return ";
         question6.ShortAnswer = true;
@@ -180,7 +180,7 @@ public class GlobalVars : MonoBehaviour
 
         var question9 = new Question();
         question9.QuestionId = 9;
-        question9.Title = "US History -- Who was President during the War of 1812?";
+        question9.Title = "Who was President during the War of 1812?";
         question9.Category = 3;
         question9.Body = "return ";
         question9.ShortAnswer = false;
