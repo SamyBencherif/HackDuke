@@ -21,7 +21,7 @@ public class multipleChoice : MonoBehaviour {
     private List<Question> questions;
     private QuestionData data;
     private string myChoice;
-    
+    public string answer;
     public GameObject question;
     public Button submit;
     public Button cancel;
@@ -40,11 +40,15 @@ public class multipleChoice : MonoBehaviour {
         id = vars.currentQuestion;
 
         var danielsABitch = vars.wrapper.Data.Questions.Where(x => x.QuestionId == id).FirstOrDefault();
-
+        answer = danielsABitch.Answer;
         Cursor.lockState = CursorLockMode.None;
 
         question.GetComponent<Text>().text = danielsABitch.Title;
-
+        A.GetComponentInChildren<Text>().text = danielsABitch.A;
+        B.GetComponentInChildren<Text>().text = danielsABitch.B;
+        C.GetComponentInChildren<Text>().text = danielsABitch.C;
+        D.GetComponentInChildren<Text>().text = danielsABitch.D;
+        
         submit.gameObject.SetActive(true);
         cancel.gameObject.SetActive(true);
     }
@@ -134,8 +138,16 @@ public class multipleChoice : MonoBehaviour {
     // submit button clicked
     public void submitResult()
     {
+
         int index = get1(vars.doors);
-        if (index >= 0)
+        if (myChoice == answer)
+        {
+            if (index >= 0)
+            {
+                vars.doors[index] = 2;
+            }
+        }
+        else
         {
             vars.doors[index] = 0;
         }
