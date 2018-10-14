@@ -13,13 +13,18 @@ public class cinematicTeller : MonoBehaviour
 	float timer;
 
 	public GameObject intro;
+    public GameObject start;
+    public GameObject exit;
+
 
 	// Use this for initialization
 	void Start()
 	{
 		content = GetComponent<Text> ();
 
-		msg = content.text;
+        start.SetActive(false);
+        exit.SetActive(false);
+        msg = content.text;
 
 		dispLength = 0;
 		timer = 0;
@@ -36,14 +41,15 @@ public class cinematicTeller : MonoBehaviour
 			if (dispLength < msg.Length)
 				dispLength += 1;
 			else
-				Invoke ("hideIntro", 1.3f);
+				Invoke ("showButton", 1.3f);
 		}
 
 		content.text = msg.Substring (0, dispLength);
 	}
 
-	void hideIntro()
+	void showButton()
 	{
-		intro.SetActive (false);
-	}
+		start.SetActive (true);
+        exit.SetActive(true);
+    }
 }
