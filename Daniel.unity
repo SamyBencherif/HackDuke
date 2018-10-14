@@ -329,7 +329,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 343402859}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1730714048}
+        m_MethodName: submitResult
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &343402859
@@ -1038,12 +1049,12 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1730714047}
-        m_MethodName: 
+      - m_Target: {fileID: 1730714048}
+        m_MethodName: submitResult
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1606,7 +1617,7 @@ MonoBehaviour:
   question: {fileID: 613996501}
   submit: {fileID: 1142369511}
   cancel: {fileID: 1741477154}
-  modalPanelObject: {fileID: 582123831}
+  modalPanelObject: {fileID: 546817393}
   input: {fileID: 1903184961}
 --- !u!4 &1730714049
 Transform:
@@ -1709,8 +1720,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1730714047}
-        m_MethodName: 
+      - m_Target: {fileID: 1730714048}
+        m_MethodName: closeWindow
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
