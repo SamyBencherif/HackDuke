@@ -21,7 +21,6 @@ public class testPopup : MonoBehaviour {
 
     public void testThis() {
         Debug.Log("Clicked");
-        popup.choice("Sample Questio");
         }
 
     void myCheck() {

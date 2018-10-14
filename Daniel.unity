@@ -831,7 +831,6 @@ GameObject:
   - component: {fileID: 1142369513}
   - component: {fileID: 1142369512}
   - component: {fileID: 1142369511}
-  - component: {fileID: 1142369514}
   m_Layer: 5
   m_Name: submit
   m_TagString: Untagged
@@ -897,7 +896,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1730714048}
+      - m_Target: {fileID: 1143657319}
         m_MethodName: submitResult
         m_Mode: 1
         m_Arguments:
@@ -944,17 +943,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1142369509}
   m_CullTransparentMesh: 0
---- !u!114 &1142369514
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1142369509}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: efd1f19a527761544b38435167159b9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1143657315
 GameObject:
   m_ObjectHideFlags: 0
@@ -965,6 +953,7 @@ GameObject:
   - component: {fileID: 1143657316}
   - component: {fileID: 1143657318}
   - component: {fileID: 1143657317}
+  - component: {fileID: 1143657319}
   m_Layer: 5
   m_Name: Dialog
   m_TagString: Untagged
@@ -1028,6 +1017,22 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1143657315}
   m_CullTransparentMesh: 0
+--- !u!114 &1143657319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1143657315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db723c7787c1954428be080e12a2d315, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  question: {fileID: 613996499}
+  submit: {fileID: 1142369511}
+  cancel: {fileID: 1741477154}
+  modalPanelObject: {fileID: 1143657315}
+  input: {fileID: 1903184961}
 --- !u!1 &1277962957
 GameObject:
   m_ObjectHideFlags: 0
@@ -1261,7 +1266,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1730714049}
-  - component: {fileID: 1730714048}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -1269,22 +1273,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1730714048
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1730714047}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db723c7787c1954428be080e12a2d315, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  question: {fileID: 613996501}
-  submit: {fileID: 1142369511}
-  cancel: {fileID: 1741477154}
-  modalPanelObject: {fileID: 582123831}
-  input: {fileID: 1903184961}
 --- !u!4 &1730714049
 Transform:
   m_ObjectHideFlags: 0
@@ -1309,7 +1297,6 @@ GameObject:
   - component: {fileID: 1741477156}
   - component: {fileID: 1741477155}
   - component: {fileID: 1741477154}
-  - component: {fileID: 1741477153}
   m_Layer: 5
   m_Name: cancel
   m_TagString: Untagged
@@ -1336,17 +1323,6 @@ RectTransform:
   m_AnchoredPosition: {x: 385, y: -460}
   m_SizeDelta: {x: 150, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1741477153
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1741477151}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: efd1f19a527761544b38435167159b9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1741477154
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1386,8 +1362,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1730714048}
-        m_MethodName: submitResult
+      - m_Target: {fileID: 1143657319}
+        m_MethodName: closeWindow
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

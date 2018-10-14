@@ -8,13 +8,17 @@ using UnityEngine.Events;
 using UnityEngine;
 using IronPython.Hosting;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization;
+using Assets.HackDuke.scripts;
 using UnityEngine.SceneManagement;
 
 public class popupWindow : MonoBehaviour
 {
     private GlobalVars vars;
-    public Text question;
+    private List<Question> questions;
+    private QuestionData data;
+    public GameObject question;
     public Button submit;
     public Button cancel;
     public GameObject modalPanelObject;
@@ -23,7 +27,26 @@ public class popupWindow : MonoBehaviour
 //check if there is a popupWindow
     private static popupWindow modalPanel;
 
+    void Start()
+    {
 
+        vars = GameObject.Find("GlobalVars").GetComponent<GlobalVars>();
+        
+        var danielsABitch = vars.wrapper.Data.Questions.Where(x => x.QuestionId == 1).FirstOrDefault();
+        
+        Cursor.lockState = CursorLockMode.None;
+        //modalPanelObject.SetActive(true);
+        
+        question.GetComponent<Text>().text = danielsABitch.Title;
+
+        submit.gameObject.SetActive(true);
+        cancel.gameObject.SetActive(true);
+    }
+
+    void Update()
+    {
+
+    }
     public static popupWindow Instance () {
         if (!modalPanel) {
             modalPanel = FindObjectOfType(typeof(popupWindow)) as popupWindow;
@@ -38,21 +61,6 @@ public class popupWindow : MonoBehaviour
     public void loadInput() {
         input = modalPanelObject.GetComponent<InputField>();
     }
-
-    // if the submit or cancel button is clicked
-    public void choice(string question)
-    {
-        
-        Cursor.lockState = CursorLockMode.None;
-        modalPanelObject.SetActive(true);
-
-        // set question
-        this.question.text = question;
-
-        submit.gameObject.SetActive(true);
-        cancel.gameObject.SetActive(true);
-    }
-
 
     public int get1(int[] nums)
     {
@@ -73,10 +81,11 @@ public class popupWindow : MonoBehaviour
     // submit button clicked
     public void submitResult()
     {
-        vars = GameObject.Find("GlobalVars").GetComponent<GlobalVars>();
-        int index = get1(
-            vars.doors);
-        vars.doors[index] = 2;
+        int index = get1(vars.doors);
+        if (index >= 0)
+        {
+            vars.doors[index] = 0;
+        }
         SceneManager.LoadScene("Roomly");
     }
 
@@ -84,7 +93,7 @@ public class popupWindow : MonoBehaviour
     public void closeWindow() {
         int index = get1(vars.doors);
         vars.doors[index] = 0;
-        modalPanelObject.SetActive(false);
+        SceneManager.LoadScene("Roomly");
     }
 
 

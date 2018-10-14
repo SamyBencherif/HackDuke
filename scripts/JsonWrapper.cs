@@ -13,9 +13,8 @@ public class JsonWrapper
 
     public void SaveData(QuestionData questionData)
     {
-        JsonWrapper wrapper = new JsonWrapper();
-        wrapper.Data = questionData;
-        string contents = JsonUtility.ToJson(wrapper, true);
+        this.Data = questionData;
+        string contents = JsonUtility.ToJson(this, true);
         System.IO.File.WriteAllText(Path, contents);
     }
 

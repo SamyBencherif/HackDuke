@@ -15,8 +15,10 @@ public class checkInput : MonoBehaviour {
     public InputField input;
     public InputField.SubmitEvent se; 
     public bool check = false;
+    public GlobalVars vars;
     void Start() {
         input = gameObject.GetComponent<InputField>();
+        vars = GameObject.Find("GlobalVars").GetComponent<GlobalVars>();
         se = new InputField.SubmitEvent();
         se.AddListener(test);
         input.onEndEdit = se;
@@ -34,9 +36,32 @@ public class checkInput : MonoBehaviour {
             codepuzzle thepuzzle = new codepuzzle(inputs, correctcode);
             check = thepuzzle.testsoln(arg0);
             Debug.Log(check);
+            if (check)
+            {
+                Debug.Log("Got Here");
+                int index = get1(vars.doors);
+                vars.doors[index] = 2;
+            }
+            
+    }
+
+    public int get1(int[] nums)
+    {
+        int index = 0;
+        foreach (var num in nums)
+        {
+            if (num == 1)
+            {
+                return index;
+            }
+
+            index++;
         }
 
+        return -1;
     }
+
+}
 
     public class codepuzzle
     {
