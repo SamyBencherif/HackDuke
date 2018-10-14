@@ -18,7 +18,9 @@ public class JsonData : MonoBehaviour
 	// Update is called once per frame
 	void Update () {
         if (Input.GetKeyDown(KeyCode.S))
-	    {
+        {
+            questionData.Title = "Hello";
+            questionData.Answer = "It's me";
 	        SaveData();
 	    }
 	    if (Input.GetKeyDown(KeyCode.R))
@@ -35,6 +37,8 @@ public class JsonData : MonoBehaviour
 
     void ReadData()
     {
-
+        string contents = System.IO.File.ReadAllText(path);
+        questionData = JsonUtility.FromJson<QuestionData>(contents);
+        Debug.Log(questionData.Title + ", " + questionData.Answer);
     }
 }
