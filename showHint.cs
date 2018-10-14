@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Random = System.Random;
 
 public class showHint : MonoBehaviour
 {
@@ -29,8 +31,21 @@ public class showHint : MonoBehaviour
             var index = door.Index;
             vars.doors[index] = 1;
             vars.currentPosition = collision.transform.position;
+            vars = GameObject.Find("GlobalVars").GetComponent<GlobalVars>();
+            Random r = new Random();
+            int id = r.Next(0, 7);
+            vars.currentQuestion = id;
 
-            SceneManager.LoadScene("Daniel");
+            var danielsABitch = vars.wrapper.Data.Questions.Where(x => x.QuestionId == id).FirstOrDefault();
+            if (danielsABitch.MultipleChoice)
+            {
+                SceneManager.LoadScene("multiplechoice");
+            }
+
+            if (danielsABitch.ShortAnswer)
+            {
+                SceneManager.LoadScene("Daniel");
+            }
         }
     }
 
