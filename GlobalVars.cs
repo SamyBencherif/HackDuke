@@ -10,10 +10,16 @@ public class GlobalVars : MonoBehaviour
     public bool initialLoad = true;
     public Vector3 currentPosition;
 
+    public int[] doors;
 	// Use this for initialization
 	void Start()
 	{
         DontDestroyOnLoad(gameObject);
+	    doors = new int[]
+	    {
+	        0, 0, 0, 0, 0, 0, 0
+	    };
+
         SceneManager.LoadScene("Roomly");
 	}
 	

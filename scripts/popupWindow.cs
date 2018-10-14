@@ -13,6 +13,7 @@ using UnityEngine.SceneManagement;
 
 public class popupWindow : MonoBehaviour
 {
+    private GlobalVars vars;
     public Text question;
     public Button submit;
     public Button cancel;
@@ -41,6 +42,7 @@ public class popupWindow : MonoBehaviour
     // if the submit or cancel button is clicked
     public void choice(string question)
     {
+        
         Cursor.lockState = CursorLockMode.None;
         modalPanelObject.SetActive(true);
 
@@ -51,14 +53,39 @@ public class popupWindow : MonoBehaviour
         cancel.gameObject.SetActive(true);
     }
 
+
+    public int get1(int[] nums)
+    {
+        int index = 0;
+        foreach (var num in nums)
+        {
+            if (num == 1)
+            {
+                return index;
+            }
+
+            index++;
+        }
+
+        return -1;
+    }
+
     // submit button clicked
-    public void submitResult() {
+    public void submitResult()
+    {
+        vars = GameObject.Find("GlobalVars").GetComponent<GlobalVars>();
+        int index = get1(
+            vars.doors);
+        vars.doors[index] = 2;
         SceneManager.LoadScene("Roomly");
     }
 
     //close popup window
     public void closeWindow() {
+        int index = get1(vars.doors);
+        vars.doors[index] = 0;
         modalPanelObject.SetActive(false);
     }
+
 
 }

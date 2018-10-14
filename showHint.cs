@@ -25,7 +25,11 @@ public class showHint : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
+            var door = transform.parent.gameObject.GetComponent<doorOpener>();
+            var index = door.Index;
+            vars.doors[index] = 1;
             vars.currentPosition = collision.transform.position;
+
             SceneManager.LoadScene("Daniel");
         }
     }
