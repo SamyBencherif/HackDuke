@@ -999,6 +999,21 @@ Prefab:
       propertyPath: exit
       value: 
       objectReference: {fileID: 463144544}
+    - target: {fileID: 114244918073129010, guid: 04421233e1b115f4888551bc1695efbc,
+        type: 2}
+      propertyPath: m_Text
+      value: 'I woke up here.
+
+        I''ve been kidnapped by my evil teacher!
+
+
+        Now I am in his mansion of trials!
+
+        The only way out is to solve his math and computer science puzzles!
+
+
+'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 04421233e1b115f4888551bc1695efbc, type: 2}
   m_IsPrefabAsset: 0
