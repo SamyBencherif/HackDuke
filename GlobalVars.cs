@@ -73,23 +73,8 @@ public class GlobalVars : MonoBehaviour
         question1.E = "Not MC";
         question1.Answer = "return (input - 1) / 3";
 
-        var question2 = new Question();
-        question2.QuestionId = 2;
-        question2.Title = "Solve for the third side of a right triangle with hypotenuse length 20 and leg length 'input' with python";
-        question2.Category = 0;
-        question2.Body = "";
-        question2.ShortAnswer = true;
-        question2.MultipleChoice = false;
-        question2.TrueFalse = false;
-        question2.A = "Not MC";
-        question2.B = "Not MC";
-        question2.C = "Not MC";
-        question2.D = "Not MC";
-        question2.E = "Not MC";
-        question2.Answer = "import math\nreturn math.sqrt(20 * *2 - input * *2)";
-
         var question3 = new Question();
-        question3.QuestionId = 3;
+        question3.QuestionId = 2;
         question3.Title = "Return double input 'input'";
         question3.Category = 0;
         question3.Body = "return ";
@@ -104,7 +89,7 @@ public class GlobalVars : MonoBehaviour
         question3.Answer = "return (input * 2)";
 
         var question4 = new Question();
-        question4.QuestionId = 4;
+        question4.QuestionId = 3;
         question4.Title = "Find the area of a circle radius 'input' using python.";
         question4.Category = 0;
         question4.Body = "return ";
@@ -119,7 +104,7 @@ public class GlobalVars : MonoBehaviour
         question4.Answer = "import math\nreturn (math.pi * input**2)";
 
         var question5 = new Question();
-        question5.QuestionId = 5;
+        question5.QuestionId = 4;
         question5.Title = "Calculate the sum of integers 1 to a number 'input' using python.";
         question5.Category = 0;
         question5.Body = "return ";
@@ -134,7 +119,7 @@ public class GlobalVars : MonoBehaviour
         question5.Answer = "return input * (input - 1) / 2";
 
         var question6 = new Question();
-        question6.QuestionId = 6;
+        question6.QuestionId = 5;
         question6.Title = "Use python to square number input.";
         question6.Category = 0;
         question6.Body = "return ";
@@ -149,7 +134,7 @@ public class GlobalVars : MonoBehaviour
         question6.Answer = "return input ** 2";
 
         var question7 = new Question();
-        question7.QuestionId = 7;
+        question7.QuestionId = 6;
         question7.Title = "What is the square root of 100";
         question7.Category = 1;
         question7.Body = "";
@@ -164,7 +149,7 @@ public class GlobalVars : MonoBehaviour
         question7.Answer = "B";
 
         var question8 = new Question();
-        question8.QuestionId = 8;
+        question8.QuestionId = 7;
         question8.Title = "What is acceleration due to gravity on Earth's surface?";
         question8.Category = 2;
         question8.Body = "return ";
@@ -179,7 +164,7 @@ public class GlobalVars : MonoBehaviour
         question8.Answer = "A";
 
         var question9 = new Question();
-        question9.QuestionId = 9;
+        question9.QuestionId = 8;
         question9.Title = "Who was President during the War of 1812?";
         question9.Category = 3;
         question9.Body = "return ";
@@ -195,7 +180,6 @@ public class GlobalVars : MonoBehaviour
 
         questions.Add(question0);
         questions.Add(question1);
-        questions.Add(question2);
         questions.Add(question3);
         questions.Add(question4);
         questions.Add(question5);
