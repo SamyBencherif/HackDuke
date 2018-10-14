@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class showHint : MonoBehaviour
 {
@@ -15,12 +16,23 @@ public class showHint : MonoBehaviour
 			hint.SetActive (true);
 			vars.showDoorHint = false;
 		}
+
+	    
 	}
 
 	void OnTriggerExit(Collider collision)
 	{
 		hint.SetActive (false);
 	}
+
+    void OnTriggerStay(Collider collision)
+    {
+        Debug.Log("Triggering");
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            SceneManager.LoadScene("Daniel");
+        }
+    }
 
 	// Use this for initialization
 	void Start()
@@ -31,6 +43,6 @@ public class showHint : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		
-	}
+
+    }
 }
