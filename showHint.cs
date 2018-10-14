@@ -33,11 +33,10 @@ public class showHint : MonoBehaviour
             vars.currentPosition = collision.transform.position;
             vars = GameObject.Find("GlobalVars").GetComponent<GlobalVars>();
             Random r = new Random();
-            int id = r.Next(0, 10);
+            int id = r.Next(0, 9);
             vars.currentQuestion = id;
 
             var danielsABitch = vars.wrapper.Data.Questions.Where(x => x.QuestionId == id).FirstOrDefault();
-            Debug.Log(danielsABitch.QuestionId + ", " + danielsABitch.MultipleChoice);
             if (danielsABitch.MultipleChoice)
             {
                 SceneManager.LoadScene("multiplechoice");

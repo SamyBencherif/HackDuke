@@ -28,7 +28,6 @@ public class GlobalVars : MonoBehaviour
 
         questions = AddQuestions(questions);
 
-
 	    questionData.Questions = questions;
 	    wrapper.SaveData(questionData);
         SceneManager.LoadScene("Roomly");
