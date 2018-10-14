@@ -1556,6 +1556,7 @@ MonoBehaviour:
   B: {fileID: 20307548}
   C: {fileID: 397418828}
   D: {fileID: 1292590703}
+  E: {fileID: 1945665408}
 --- !u!114 &1143657320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2293,7 +2294,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1143657319}
-        m_MethodName: choseButtunD
+        m_MethodName: chooseButtonE
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -29,6 +29,7 @@ public class multipleChoice : MonoBehaviour {
     public Button B;
     public Button C;
     public Button D;
+    public Button E;
     
 
     void Start()
@@ -48,7 +49,7 @@ public class multipleChoice : MonoBehaviour {
         B.GetComponentInChildren<Text>().text = danielsABitch.B;
         C.GetComponentInChildren<Text>().text = danielsABitch.C;
         D.GetComponentInChildren<Text>().text = danielsABitch.D;
-        
+        E.GetComponentInChildren<Text>().text = danielsABitch.E;
         submit.gameObject.SetActive(true);
         cancel.gameObject.SetActive(true);
     }
@@ -83,6 +84,7 @@ public class multipleChoice : MonoBehaviour {
         TurnWhite(B);
         TurnWhite(C);
         TurnWhite(D);
+        TurnWhite(E);
     }
 
     public void choseButtunB()
@@ -94,6 +96,7 @@ public class multipleChoice : MonoBehaviour {
         TurnWhite(A);
         TurnWhite(C);
         TurnWhite(D);
+        TurnWhite(E);
     }
 
     public void choseButtunC()
@@ -105,6 +108,7 @@ public class multipleChoice : MonoBehaviour {
         TurnWhite(A);
         TurnWhite(B);
         TurnWhite(D);
+        TurnWhite(E);
     }
 
     public void choseButtunD()
@@ -116,7 +120,20 @@ public class multipleChoice : MonoBehaviour {
         TurnWhite(A);
         TurnWhite(C);
         TurnWhite(B);
-        Debug.Log(myChoice);
+        TurnWhite(E);
+
+    }
+
+    public void chooseButtonE()
+    {
+        myChoice = "D";
+
+        // change color
+        TurnRed(E);
+        TurnWhite(A);
+        TurnWhite(C);
+        TurnWhite(B);
+        TurnWhite(D);
     }
 
     public int get1(int[] nums)
