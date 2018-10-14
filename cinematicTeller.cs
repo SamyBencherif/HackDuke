@@ -34,7 +34,7 @@ public class cinematicTeller : MonoBehaviour
 	void Update()
 	{
 		timer += Time.deltaTime;
-		if (timer > .1)
+		if (timer > .05)
 		{
 			timer = 0;
 
