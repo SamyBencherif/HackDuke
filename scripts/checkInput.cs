@@ -34,7 +34,7 @@ public class checkInput : MonoBehaviour {
             inputs[2] = 5.0;
             inputs[3] = 4.0;
             inputs[4] = 6.0;
-            string correctcode = question.Body;
+            string correctcode = question.Answer;
             codepuzzle thepuzzle = new codepuzzle(inputs, correctcode);
             check = thepuzzle.testsoln(arg0);
             Debug.Log(check);

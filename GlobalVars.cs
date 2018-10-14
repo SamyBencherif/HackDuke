@@ -32,7 +32,7 @@ public class GlobalVars : MonoBehaviour
 	        question.QuestionId = k;
 	        question.Title = "This is Question " + k;
 	        question.Category = (short)(100 - k);
-	        question.Body = "return " + k;
+	        question.Body = "return " + k * k;
 	        question.ShortAnswer = true;
 	        question.MultipleChoice = false;
 	        question.TrueFalse = false;
@@ -41,8 +41,8 @@ public class GlobalVars : MonoBehaviour
 	        question.C = "Not MC";
 	        question.D = "Not MC";
 	        question.E = "Not MC";
-	        question.Answer = "You have " + k + "unheard voicemails";
-	        questions.Add(question);
+	        question.Answer = "return " + k;
+            questions.Add(question);
 
 	    }
 
