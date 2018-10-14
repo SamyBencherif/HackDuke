@@ -36,8 +36,11 @@ public class popupWindow : MonoBehaviour
         int id = r.Next(0, 7);
         vars.currentQuestion = id;
         Debug.Log(id);
-        var danielsABitch = vars.wrapper.Data.Questions.Where(x => x.QuestionId == id).FirstOrDefault();
-        
+        var danielsABitch = vars.wrapper.Data.Questions.Where(x => x.QuestionId == 9).FirstOrDefault();
+        if (danielsABitch.MultipleChoice)
+        {
+            SceneManager.LoadScene("multiplechoice");
+        }
         Cursor.lockState = CursorLockMode.None;
         //modalPanelObject.SetActive(true);
         
