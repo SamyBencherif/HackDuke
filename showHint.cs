@@ -27,9 +27,9 @@ public class showHint : MonoBehaviour
 
     void OnTriggerStay(Collider collision)
     {
-        Debug.Log("Triggering");
         if (Input.GetKeyDown(KeyCode.E))
         {
+            vars.currentPosition = collision.transform.position;
             SceneManager.LoadScene("Daniel");
         }
     }
@@ -37,7 +37,7 @@ public class showHint : MonoBehaviour
 	// Use this for initialization
 	void Start()
 	{
-		vars = GameObject.Find ("GlobalVars").GetComponent<GlobalVars> ();
+		vars = GameObject.Find ("GlobalVars").GetComponent<GlobalVars>();
 	}
 	
 	// Update is called once per frame
