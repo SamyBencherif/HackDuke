@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class JsonData : MonoBehaviour
 {
-    List<Question> questions = new List<Question>();
-    QuestionData questionData = new QuestionData();
-    JsonWrapper wrapper = new JsonWrapper();
+    public List<Question> questions = new List<Question>();
+    public QuestionData questionData = new QuestionData();
+    public JsonWrapper wrapper = new JsonWrapper();
 
     private int index = 0;
 	// Use this for initialization
