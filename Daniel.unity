@@ -954,6 +954,7 @@ GameObject:
   - component: {fileID: 1143657318}
   - component: {fileID: 1143657317}
   - component: {fileID: 1143657319}
+  - component: {fileID: 1143657320}
   m_Layer: 5
   m_Name: Dialog
   m_TagString: Untagged
@@ -1033,6 +1034,18 @@ MonoBehaviour:
   cancel: {fileID: 1741477154}
   modalPanelObject: {fileID: 1143657315}
   input: {fileID: 1903184961}
+--- !u!114 &1143657320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1143657315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1184210157, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AllowSwitchOff: 0
 --- !u!1 &1277962957
 GameObject:
   m_ObjectHideFlags: 0
@@ -1563,3 +1576,4 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.InputField+SubmitEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
   check: 0
+  vars: {fileID: 0}
