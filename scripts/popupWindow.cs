@@ -31,7 +31,7 @@ public class popupWindow : MonoBehaviour {
     }
 
     // if the submit or cancel button is clicked
-    public void choice(string question, UnityAction checkAction, UnityAction cancelAction) {
+    public void choice(string question) {
         modalPanelObject.SetActive(true);
 
         // set question
@@ -39,20 +39,12 @@ public class popupWindow : MonoBehaviour {
 
         submit.gameObject.SetActive(true);
         cancel.gameObject.SetActive(true);
+    }
 
-        // if submit
-        submit.onClick.RemoveAllListeners();
-        submit.onClick.AddListener(loadInput);
-        submit.onClick.AddListener(checkAction);
-        submit.onClick.AddListener(closeWindow);
-
-        // if giveup
-        cancel.onClick.RemoveAllListeners();
-        cancel.onClick.AddListener(cancelAction);
-        cancel.onClick.AddListener(closeWindow);
-
-
-
+    // submit button clicked
+    public void submitResult() {
+        this.loadInput();
+        this.closeWindow();
     }
 
     //close popup window
