@@ -93,9 +93,9 @@ public class checkInput : MonoBehaviour {
             }
             return true;
         }
-        string runpuzzle(double input, string usersoln)
+        string runpuzzle(double n, string usersoln)
         {
-            string intro = "def main(input):\n\t";
+            string intro = "def main(n):\n\t";
             string cleanedinput = usersoln.Replace("\n", "\n\t");
             string pySrc = intro + cleanedinput;
 
@@ -108,7 +108,7 @@ public class checkInput : MonoBehaviour {
             string stringres;
             try
             {
-                var res = scope.GetVariable("main")(input);
+                var res = scope.GetVariable("main")(n);
                 if (res is string)
                 {
                     stringres = res;
