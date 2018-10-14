@@ -1,9 +1,0 @@
-C:\devGit\Roomly.API\Roomly.Data\bin\Debug\netcoreapp2.0\Roomly.Data.deps.json
-C:\devGit\Roomly.API\Roomly.Data\bin\Debug\netcoreapp2.0\Roomly.Data.dll
-C:\devGit\Roomly.API\Roomly.Data\bin\Debug\netcoreapp2.0\Roomly.Data.pdb
-C:\devGit\Roomly.API\Roomly.Data\obj\Debug\netcoreapp2.0\Roomly.Data.csprojAssemblyReference.cache
-C:\devGit\Roomly.API\Roomly.Data\obj\Debug\netcoreapp2.0\Roomly.Data.csproj.CoreCompileInputs.cache
-C:\devGit\Roomly.API\Roomly.Data\obj\Debug\netcoreapp2.0\Roomly.Data.AssemblyInfoInputs.cache
-C:\devGit\Roomly.API\Roomly.Data\obj\Debug\netcoreapp2.0\Roomly.Data.AssemblyInfo.cs
-C:\devGit\Roomly.API\Roomly.Data\obj\Debug\netcoreapp2.0\Roomly.Data.dll
-C:\devGit\Roomly.API\Roomly.Data\obj\Debug\netcoreapp2.0\Roomly.Data.pdb

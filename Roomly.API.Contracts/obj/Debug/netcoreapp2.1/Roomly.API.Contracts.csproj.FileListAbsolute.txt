@@ -1,9 +1,0 @@
-C:\devGit\Roomly.API\Roomly.API.Contracts\bin\Debug\netcoreapp2.1\Roomly.API.Contracts.deps.json
-C:\devGit\Roomly.API\Roomly.API.Contracts\bin\Debug\netcoreapp2.1\Roomly.API.Contracts.dll
-C:\devGit\Roomly.API\Roomly.API.Contracts\bin\Debug\netcoreapp2.1\Roomly.API.Contracts.pdb
-C:\devGit\Roomly.API\Roomly.API.Contracts\obj\Debug\netcoreapp2.1\Roomly.API.Contracts.csprojAssemblyReference.cache
-C:\devGit\Roomly.API\Roomly.API.Contracts\obj\Debug\netcoreapp2.1\Roomly.API.Contracts.csproj.CoreCompileInputs.cache
-C:\devGit\Roomly.API\Roomly.API.Contracts\obj\Debug\netcoreapp2.1\Roomly.API.Contracts.AssemblyInfoInputs.cache
-C:\devGit\Roomly.API\Roomly.API.Contracts\obj\Debug\netcoreapp2.1\Roomly.API.Contracts.AssemblyInfo.cs
-C:\devGit\Roomly.API\Roomly.API.Contracts\obj\Debug\netcoreapp2.1\Roomly.API.Contracts.dll
-C:\devGit\Roomly.API\Roomly.API.Contracts\obj\Debug\netcoreapp2.1\Roomly.API.Contracts.pdb
