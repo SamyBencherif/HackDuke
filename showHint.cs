@@ -10,10 +10,13 @@ public class showHint : MonoBehaviour
 
 	public GameObject hint;
 	GlobalVars vars;
-
+    private int doorIndex;
 	void OnTriggerEnter(Collider collision)
 	{
-			hint.SetActive (true);
+        var door = transform.parent.gameObject.GetComponent<doorOpener>();
+	    doorIndex = door.Index;
+
+        hint.SetActive (true);
 
 	    
 	}
@@ -25,15 +28,16 @@ public class showHint : MonoBehaviour
 
     void OnTriggerStay(Collider collision)
     {
+        if (vars.doors[doorIndex] == 2)
+        {
+            hint.SetActive(false);
+        }
         if (Input.GetKeyDown(KeyCode.E))
         {
-            var door = transform.parent.gameObject.GetComponent<doorOpener>();
-            var index = door.Index;
-            if (vars.doors[index] == 2)
-            {
+            if (vars.doors[doorIndex] == 2) { 
                 return;
             };
-            vars.doors[index] = 1;
+            vars.doors[doorIndex] = 1;
             vars.currentPosition = collision.transform.position;
             vars = GameObject.Find("GlobalVars").GetComponent<GlobalVars>();
             Random r = new Random();
