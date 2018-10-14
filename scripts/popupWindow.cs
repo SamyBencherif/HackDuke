@@ -4,8 +4,10 @@ using UnityEngine.UI;
 using UnityEngine.Events;
 using UnityEngine;
 
-public class popupWindow : MonoBehaviour {
+public class popupWindow : MonoBehaviour
+{
 
+    public JsonWrapper wrapper = JsonData.wrapper;
     public Text question;
     public Button submit;
     public Button cancel;
@@ -31,7 +33,9 @@ public class popupWindow : MonoBehaviour {
     }
 
     // if the submit or cancel button is clicked
-    public void choice(string question) {
+    public void choice(int id)
+    {
+        wrapper.GetQuestion(id);
         modalPanelObject.SetActive(true);
 
         // set question

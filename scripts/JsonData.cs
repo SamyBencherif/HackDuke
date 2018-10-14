@@ -1,44 +1,52 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Assets.HackDuke.scripts;
 using UnityEngine;
 
 public class JsonData : MonoBehaviour
 {
-    private string filename = "data.json";
-
-    private string path;
-
+    List<Question> questions = new List<Question>();
     QuestionData questionData = new QuestionData();
+    JsonWrapper wrapper = new JsonWrapper();
+
+    private int index = 0;
 	// Use this for initialization
 	void Start ()
 	{
-	    path = Application.persistentDataPath + "/" + filename;
+	    wrapper.Path = Application.persistentDataPath + "/" + wrapper.Filename;
+	    for (int k = 0; k < 100; k++)
+	    {
+            var question = new Question();
+	        question.QuestionId = k;
+	        question.Title = "This is Question " + k;
+	        question.Category = (short) (100 - k);
+	        question.Body = "We are testing the initialization of data -- here is the question squared" + k * k;
+	        question.ShortAnswer = true;
+	        question.MultipleChoice = false;
+	        question.TrueFalse = false;
+	        question.A = "Not MC";
+	        question.B = "Not MC";
+	        question.C = "Not MC";
+	        question.D = "Not MC";
+	        question.E = "Not MC";
+	        question.Answer = "You have " + k + "unheard voicemails";
+
+            questions.Add(question);
+
+	    }
+
+	    questionData.Questions = questions;
+        wrapper.SaveData(questionData);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            questionData.Title = "Hello";
-            questionData.Answer = "It's me";
-	        SaveData();
-	    }
-	    if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R))
 	    {
-	        ReadData();
+	        wrapper.GetQuestion(index);
+	        index++;
 	    }
 	}
 
-    void SaveData()
-    {
-        string contents = JsonUtility.ToJson(questionData, true);
-        System.IO.File.WriteAllText(path, contents);
-    }
-
-    void ReadData()
-    {
-        string contents = System.IO.File.ReadAllText(path);
-        questionData = JsonUtility.FromJson<QuestionData>(contents);
-        Debug.Log(questionData.Title + ", " + questionData.Answer);
-    }
+    
 }
