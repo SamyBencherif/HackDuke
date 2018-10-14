@@ -9,6 +9,7 @@ using UnityEngine;
 using IronPython.Hosting;
 using System.IO;
 using System.Runtime.Serialization;
+using UnityEngine.SceneManagement;
 
 public class popupWindow : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class popupWindow : MonoBehaviour
 
 //check if there is a popupWindow
     private static popupWindow modalPanel;
+
 
     public static popupWindow Instance () {
         if (!modalPanel) {
@@ -39,7 +41,7 @@ public class popupWindow : MonoBehaviour
     // if the submit or cancel button is clicked
     public void choice(string question)
     {
-
+        Cursor.lockState = CursorLockMode.None;
         modalPanelObject.SetActive(true);
 
         // set question
@@ -51,7 +53,7 @@ public class popupWindow : MonoBehaviour
 
     // submit button clicked
     public void submitResult() {
-        this.closeWindow();
+        SceneManager.LoadScene("Roomly");
     }
 
     //close popup window

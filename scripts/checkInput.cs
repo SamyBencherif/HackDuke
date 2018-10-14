@@ -12,9 +12,9 @@ using System.Runtime.Serialization;
 
 public class checkInput : MonoBehaviour {
     
-        public InputField input;
+    public InputField input;
     public InputField.SubmitEvent se; 
-
+    public bool check = false;
     void Start() {
         input = gameObject.GetComponent<InputField>();
         se = new InputField.SubmitEvent();
@@ -32,7 +32,8 @@ public class checkInput : MonoBehaviour {
             inputs[4] = 6.0;
             string correctcode = "return input";
             codepuzzle thepuzzle = new codepuzzle(inputs, correctcode);
-            Debug.Log(thepuzzle.testsoln(arg0));
+            check = thepuzzle.testsoln(arg0);
+            Debug.Log(check);
         }
 
     }
