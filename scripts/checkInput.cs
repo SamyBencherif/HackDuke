@@ -39,7 +39,7 @@ public class checkInput : MonoBehaviour {
             if(!string.Equals(arg0,""))
             {
                 check = thepuzzle.testsoln(arg0);
-                Debug.Log(check);
+                Debug.Log(check ? "passed the test" : "failed");
             }
             else
             {
@@ -49,6 +49,7 @@ public class checkInput : MonoBehaviour {
             {
                 int index = get1(vars.doors);
                 vars.doors[index] = 2;
+                Debug.Log("set to open..");
             }
 
     }
@@ -102,12 +103,13 @@ public class checkInput : MonoBehaviour {
             // host python and execute script
             var engine = Python.CreateEngine();
             var scope = engine.CreateScope();
-            engine.Execute(pySrc, scope);
 
             // get function and dynamically invoke
             string stringres;
             try
             {
+                engine.Execute(pySrc, scope);
+
                 var res = scope.GetVariable("main")(n);
                 if (res is string)
                 {
@@ -121,7 +123,7 @@ public class checkInput : MonoBehaviour {
             catch (Exception e)
             {
                 Debug.Log(e.ToString());
-                Debug.Log("SYNTAX ERROR!");
+                Debug.Log("ERROR!");
                 return "";
             }
             return stringres;

@@ -43,7 +43,7 @@ public class GlobalVars : MonoBehaviour
     {
         var question0 = new Question();
         question0.QuestionId = 0;
-        question0.Title = "Find the nth Fibonacci number using python(write in terms of 'input')";
+        question0.Title = "Find the nth Fibonacci number using python(write in terms of 'n')";
         question0.Category = 0;
         question0.Body = "";
         question0.ShortAnswer = true;
@@ -54,7 +54,7 @@ public class GlobalVars : MonoBehaviour
         question0.C = "Not MC";
         question0.D = "Not MC";
         question0.E = "Not MC";
-        question0.Answer = "def recurse(input):\n\tif(input < 2): \n\t\treturn 1\n\telse:\n\t\treturn recurse(input-1) + recurse(input-2)\nreturn recurse(input)";
+        question0.Answer = "def recurse(n):\n\tif(n < 2): \n\t\treturn 1\n\telse:\n\t\treturn recurse(n-1) + recurse(n-2)\nreturn recurse(n)";
 
 
         var question1 = new Question();
@@ -70,11 +70,11 @@ public class GlobalVars : MonoBehaviour
         question1.C = "Not MC";
         question1.D = "Not MC";
         question1.E = "Not MC";
-        question1.Answer = "return (input - 1) / 3";
+        question1.Answer = "return (n - 1) / 3";
 
         var question3 = new Question();
         question3.QuestionId = 2;
-        question3.Title = "Return double input 'input'";
+        question3.Title = "Return double n 'n'";
         question3.Category = 0;
         question3.Body = "return ";
         question3.ShortAnswer = true;
@@ -85,11 +85,11 @@ public class GlobalVars : MonoBehaviour
         question3.C = "Not MC";
         question3.D = "Not MC";
         question3.E = "Not MC";
-        question3.Answer = "return (input * 2)";
+        question3.Answer = "return (n * 2)";
 
         var question4 = new Question();
         question4.QuestionId = 3;
-        question4.Title = "Find the area of a circle radius 'input' using python.";
+        question4.Title = "Find the area of a circle radius 'n' using python.";
         question4.Category = 0;
         question4.Body = "return ";
         question4.ShortAnswer = true;
@@ -100,11 +100,11 @@ public class GlobalVars : MonoBehaviour
         question4.C = "Not MC";
         question4.D = "Not MC";
         question4.E = "Not MC";
-        question4.Answer = "import math\nreturn (math.pi * input**2)";
+        question4.Answer = "import math\nreturn (math.pi * n**2)";
 
         var question5 = new Question();
         question5.QuestionId = 4;
-        question5.Title = "Calculate the sum of integers 1 to a number 'input' using python.";
+        question5.Title = "Calculate the sum of integers 1 to a number 'n' using python.";
         question5.Category = 0;
         question5.Body = "return ";
         question5.ShortAnswer = true;
@@ -115,11 +115,11 @@ public class GlobalVars : MonoBehaviour
         question5.C = "Not MC";
         question5.D = "Not MC";
         question5.E = "Not MC";
-        question5.Answer = "return input * (input - 1) / 2";
+        question5.Answer = "return n * (n - 1) / 2";
 
         var question6 = new Question();
         question6.QuestionId = 5;
-        question6.Title = "Use python to square number input.";
+        question6.Title = "Use python to square number n.";
         question6.Category = 0;
         question6.Body = "return ";
         question6.ShortAnswer = true;
@@ -130,7 +130,7 @@ public class GlobalVars : MonoBehaviour
         question6.C = "Not MC";
         question6.D = "Not MC";
         question6.E = "Not MC";
-        question6.Answer = "return input ** 2";
+        question6.Answer = "return n ** 2";
 
         var question7 = new Question();
         question7.QuestionId = 6;

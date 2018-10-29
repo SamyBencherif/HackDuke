@@ -37,7 +37,7 @@ public class popupWindow : MonoBehaviour
         var danielsABitch = vars.wrapper.Data.Questions.Where(x => x.QuestionId == id).FirstOrDefault();
         Cursor.lockState = CursorLockMode.None;
         //modalPanelObject.SetActive(true);
-        
+
         question.GetComponent<Text>().text = danielsABitch.Title;
 
         submit.gameObject.SetActive(true);
@@ -86,14 +86,17 @@ public class popupWindow : MonoBehaviour
         if (index >= 0)
         {
             vars.doors[index] = 0;
+            Debug.Log("set to close..");
         }
+
         SceneManager.LoadScene("Roomly");
     }
 
     //close popup window
     public void closeWindow() {
         int index = get1(vars.doors);
-        vars.doors[index] = 0;
+        if (index >= 0)
+            vars.doors[index] = 0;
         SceneManager.LoadScene("Roomly");
     }
 
