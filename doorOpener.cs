@@ -33,13 +33,10 @@ public class doorOpener : MonoBehaviour
 	
 	// Update is called once per frame
 	void Update () {
-	    
             LDoorOpen.SetActive(Open);
 	        RDoorOpen.SetActive(Open);
 	        LDoorClosed.SetActive(!Open);
             RDoorClosed.SetActive(!Open);
             DoorSolid.SetActive(!Open);
-
-
     }
 }
